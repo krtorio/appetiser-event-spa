@@ -15,7 +15,8 @@ class EventRepository {
         $year = $tempArray[0];
         $month = $tempArray[1];
 
-        $numberOfDaysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        //$numberOfDaysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        $numberOfDaysInMonth = date("t",strtotime("$year-$month-01"));
         $from = $year."-".$month."-01";
         $to = $year."-".$month."-".$numberOfDaysInMonth;
 
